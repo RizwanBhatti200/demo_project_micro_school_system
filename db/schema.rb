@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_073538) do
+ActiveRecord::Schema.define(version: 2020_11_03_104039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,15 +32,39 @@ ActiveRecord::Schema.define(version: 2020_11_03_073538) do
     t.index ["reset_password_token"], name: "index_parents_on_reset_password_token", unique: true
   end
 
+  create_table "pods", force: :cascade do |t|
+    t.bigint "parent_id"
+    t.bigint "teacher_id"
+    t.string "zipcode"
+    t.string "teacher_name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_pods_on_parent_id"
+    t.index ["teacher_id"], name: "index_pods_on_teacher_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.bigint "parent_id"
-    t.string "f_name"
-    t.string "l_name"
+    t.bigint "pod_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "grade", limit: 3
     t.integer "age"
     t.integer "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["parent_id"], name: "index_students_on_parent_id"
+    t.index ["pod_id"], name: "index_students_on_pod_id"
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "gender"
+    t.string "grade", limit: 3
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

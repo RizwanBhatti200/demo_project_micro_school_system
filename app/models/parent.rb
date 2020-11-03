@@ -1,5 +1,6 @@
 class Parent < ApplicationRecord
   has_many :students
+  has_many :pods
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # after_create :send_email
