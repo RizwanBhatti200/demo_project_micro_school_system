@@ -22,7 +22,7 @@ class ParentsController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @parent = Parent.new(user_params)
+    @parent = Parent.new(parent_params)
 
     respond_to do |format|
       if @parent.save
@@ -40,7 +40,7 @@ class ParentsController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @parent.update(user_params)
+      if @parent.update(parent_params)
         format.html { redirect_to @parent, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @parent }
       else
@@ -55,20 +55,21 @@ class ParentsController < ApplicationController
   def destroy
     @parent.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to parentss_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_user
+  #Use callbacks to share common setup or constraints between actions.
+  def set_parent
     @parent = Parent.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
-  def user_params
+  def parent_params
     params.require(:parent).permit(:email)
   end
 end
+
