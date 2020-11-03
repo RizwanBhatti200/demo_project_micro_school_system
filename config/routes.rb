@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :students
   get 'pods/index'
   devise_for :parents
   
