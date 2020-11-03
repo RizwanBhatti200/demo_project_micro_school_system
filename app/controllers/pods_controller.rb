@@ -69,6 +69,6 @@ class PodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pod_params
-      params.require(:pod).permit(:zipcode, :teacher_name, :description)
+      params.require(:pod).permit(:zipcode, :pod_name, :description)
     end
 end
