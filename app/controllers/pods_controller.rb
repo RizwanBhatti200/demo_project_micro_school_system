@@ -1,28 +1,21 @@
 class PodsController < ApplicationController
-  before_action :set_pod, only: [:show, :edit, :update, :destroy]
 
-  # GET /pods
-  # GET /pods.json
+  before_action :set_pod, only: [:show, :edit, :update, :destroy]
+  
   def index
     @pods = Pod.all
   end
 
-  # GET /pods/1
-  # GET /pods/1.json
   def show
   end
 
-  # GET /pods/new
   def new
     @pod = Pod.new
   end
 
-  # GET /pods/1/edit
   def edit
   end
-
-  # POST /pods
-  # POST /pods.json
+  
   def create
     @pod = Pod.new(pod_params)
 
@@ -37,8 +30,6 @@ class PodsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /pods/1
-  # PATCH/PUT /pods/1.json
   def update
     respond_to do |format|
       if @pod.update(pod_params)
@@ -51,8 +42,6 @@ class PodsController < ApplicationController
     end
   end
 
-  # DELETE /pods/1
-  # DELETE /pods/1.json
   def destroy
     @pod.destroy
     respond_to do |format|
@@ -62,12 +51,10 @@ class PodsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_pod
       @pod = Pod.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def pod_params
       params.require(:pod).permit(:zipcode, :pod_name, :description)
     end
