@@ -1,2 +1,31 @@
-<h1>Pods#index</h1>
-<p>Find me in app/views/pods/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Pods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Zipcode</th>
+      <th>Teacher name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pods.each do |pod| %>
+      <tr>
+        <td><%= pod.zipcode %></td>
+        <td><%= pod.teacher_name %></td>
+        <td><%= pod.description %></td>
+        <td><%= link_to 'Show', pod %></td>
+        <td><%= link_to 'Edit', edit_pod_path(pod) %></td>
+        <td><%= link_to 'Destroy', pod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pod', new_pod_path %>

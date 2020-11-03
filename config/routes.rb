@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pods
   get 'pods/index'
   devise_for :parents
   root to: 'parents#show'
