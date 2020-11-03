@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Zipcode</th>
-      <th>Teacher name</th>
+      <th>Pod Name</th>
       <th>Description</th>
       <th colspan="3"></th>
     </tr>
@@ -16,7 +16,7 @@
     <% @pods.each do |pod| %>
       <tr>
         <td><%= pod.zipcode %></td>
-        <td><%= pod.teacher_name %></td>
+        <td><%= pod.pod_name %></td>
         <td><%= pod.description %></td>
         <td><%= link_to 'Show', pod %></td>
         <td><%= link_to 'Edit', edit_pod_path(pod) %></td>
