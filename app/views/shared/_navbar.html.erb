@@ -7,16 +7,25 @@
     <ul class="navbar-nav ml-auto">
     
     <% if parent_signed_in? %>
+
+      <li class="nav-item">
+       <%=link_to 'Profile', parent_path(current_parent), class: 'nav-link' %>
+      </li>
+
       <li class="nav-item">
        <%=link_to 'Sign out', destroy_parent_session_path, method: :delete, class: 'nav-link' %>
       </li>
+
       <% else %>
+
       <li class="nav-item">
         <%=link_to 'Register', new_parent_registration_path, class: 'nav-link' %>
       </li>
+
       <li class="nav-item">
       <%=link_to 'Sign in', new_parent_session_path, class: 'nav-link' %>
       </li>
+
     <% end %>
     
       
