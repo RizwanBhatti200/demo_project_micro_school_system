@@ -1,4 +1,24 @@
 <p>
+     <li class="nav-item">
+       <%=link_to 'Profile Edit', edit_parent_registration_path(current_parent), class: 'nav-link' %>
+    </li>
+</p>
+<p>
+  <strong>First Name:</strong>
+  <%= @parent.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @parent.last_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @parent.address %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @parent.email %>
 </p>
