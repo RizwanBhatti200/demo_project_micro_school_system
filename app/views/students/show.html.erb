@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>F name:</strong>
-  <%= @student.f_name %>
+  <strong>First name:</strong>
+  <%= @student.first_name %>
 </p>
 
 <p>
-  <strong>L name:</strong>
-  <%= @student.l_name %>
+  <strong>Last name:</strong>
+  <%= @student.last_name %>
 </p>
 
 <p>
@@ -19,6 +17,10 @@
   <strong>Gender:</strong>
   <%= @student.gender %>
 </p>
+<p>
+  <strong>Grade:</strong>
+  <%= @student.grade %>
+</p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to 'Edit', edit_parent_student_path(@student) %> |
+<%= link_to 'Back', parent_students_path %>

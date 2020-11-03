@@ -1,4 +1,4 @@
-<%= form_with(model: student, local: true) do |form| %>
+<%= form_with(model: [:parent, student], local: true) do |form| %>
   <% if student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :f_name %>
-    <%= form.text_field :f_name %>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= form.label :l_name %>
-    <%= form.text_field :l_name %>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.number_field :gender %>
+    <%= form.number_field :gender, min: 0, max:1 %>
   </div>
 
   <div class="actions">
