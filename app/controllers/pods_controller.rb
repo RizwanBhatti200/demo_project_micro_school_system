@@ -10,14 +10,14 @@ class PodsController < ApplicationController
   end
 
   def new
-    @pod = Pod.new
+    @pod = current_parent.pods.new
   end
 
   def edit
   end
   
   def create
-    @pod = Pod.new(pod_params)
+    @pod = current_parent.pods.new(pod_params)
 
     respond_to do |format|
       if @pod.save
