@@ -1,4 +1,4 @@
-<%= form_with(model: [:parent, student], local: true) do |form| %>
+<%= form_with(model: [:parent, student],html: { multipart: true }) do |form| %>
   <% if student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  
 
   <div class="field">
     <%= form.label :first_name %>
@@ -34,8 +35,12 @@
   <div class="field">
     <%= form.label :gender %>
     <%= form.select :gender, Student.genders.map {|k, v| [k.titleize, k]} %>
-  
   </div>
+
+  <%= form.fields_for :image, @student.image do |image| %>
+    <%= form.label :image %>
+    <%= image.file_field :avatar %>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>
