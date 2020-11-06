@@ -2,8 +2,8 @@ class PodsController < ApplicationController
 
   before_action :set_pod, only: [:show, :edit, :update, :destroy]
   
-  def index
-    @pods = Pod.all
+  def index  
+    @pods = params[:search].present? ? Pod.where(['zipcode LIKE ? ', "%#{params[:search]}%"]) : Pod.all
   end
 
   def show
@@ -58,6 +58,6 @@ class PodsController < ApplicationController
     end
 
     def pod_params
-      params.require(:pod).permit(:zipcode, :pod_name, :description, image_attributes:[:avatar])
+      params.require(:pod).permit(:zipcode, :pod_name, :search, :description, image_attributes:[:avatar])
     end
 end

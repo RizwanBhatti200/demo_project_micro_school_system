@@ -10,5 +10,5 @@ class Pod < ApplicationRecord
     def assign_teacher
         self.teacher = Teacher.all.sample if self.teacher.blank?
     end
-    
+
 end
