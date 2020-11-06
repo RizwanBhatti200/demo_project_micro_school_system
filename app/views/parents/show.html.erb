@@ -4,7 +4,9 @@
     <%= link_to 'New Pod', new_pod_path(current_parent) %> 
 </p>
 
+<%= render 'shared/show_picture', image: @parent.image %>
 <%= render 'parents/profile' %>
+
 
 <%= render 'students/student' %>
 

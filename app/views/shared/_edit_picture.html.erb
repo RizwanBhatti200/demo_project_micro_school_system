@@ -1,0 +1,6 @@
+<div>
+  <%= form.fields_for :image, photo do |image| %>
+    <%= form.label :image %>
+    <%= image.file_field :avatar %>
+  <% end %>
+</div>

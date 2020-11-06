@@ -11,9 +11,11 @@ class PodsController < ApplicationController
 
   def new
     @pod = current_parent.pods.new
+    @pod.build_image
   end
 
   def edit
+    @pod.build_image if @pod.image.blank?
   end
   
   def create
@@ -56,6 +58,6 @@ class PodsController < ApplicationController
     end
 
     def pod_params
-      params.require(:pod).permit(:zipcode, :pod_name, :description)
+      params.require(:pod).permit(:zipcode, :pod_name, :description, image_attributes:[:avatar])
     end
 end

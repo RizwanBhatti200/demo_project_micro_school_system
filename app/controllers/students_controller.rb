@@ -6,9 +6,7 @@ class StudentsController < ApplicationController
     @students = current_parent.students
   end
 
-  def show
-    
-  end
+  def show;end
 
   def new
     @student = current_parent.students.new
@@ -16,6 +14,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
+    @student.build_image if @student.image.blank?
   end
 
   def create

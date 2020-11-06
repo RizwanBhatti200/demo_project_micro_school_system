@@ -26,6 +26,9 @@
     <%= form.text_field :description %>
   </div>
 
+  <%= render 'shared/edit_picture', form: form, photo: @pod.image %>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

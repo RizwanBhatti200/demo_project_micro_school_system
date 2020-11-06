@@ -1,6 +1,9 @@
 class Parent < ApplicationRecord
   has_many :students
   has_many :pods
+  has_one :image, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :image
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   # after_create :send_email

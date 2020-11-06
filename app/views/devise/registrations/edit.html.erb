@@ -12,13 +12,19 @@
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
   </div>
-     <div class="field">
+
+  <div class="field">
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name %>
   </div>
-     <div class="field">
+
+  <div class="field">
     <%= f.label :address %><br />
     <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= render  "shared/edit_picture" , form: f, photo: @parent.image %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

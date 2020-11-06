@@ -37,11 +37,7 @@
     <%= form.select :gender, Student.genders.map {|k, v| [k.titleize, k]} %>
   </div>
 
-  <%= form.fields_for :image, @student.image do |image| %>
-    <%= form.label :image %>
-    <%= image.file_field :avatar %>
-  <% end %>
-
+  <%= render 'shared/edit_picture', form: form, photo: @student.image %>
   <div class="actions">
     <%= form.submit %>
   </div>

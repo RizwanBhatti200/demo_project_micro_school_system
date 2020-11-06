@@ -1,6 +1,6 @@
-<p>
-  <%= image_tag @student.image.avatar.url, style:"width: 150px; height: 150px;; display: inline-block " if @student.image.present? %>
-</p>
+
+<%= render 'shared/show_picture', image: @student.image %>
+
 <p>
   <strong>First name:</strong>
   <%= @student.first_name %>

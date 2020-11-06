@@ -4,6 +4,9 @@ class Pod < ApplicationRecord
     belongs_to :parent
     has_many :students
     belongs_to :teacher, optional: true
+    has_one :image, as: :imageable, dependent: :destroy
+    accepts_nested_attributes_for :image
+
     def assign_teacher
         self.teacher = Teacher.all.sample if self.teacher.blank?
     end
