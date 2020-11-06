@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'letter_opener', group: :development
 gem "paperclip"
+gem "administrate"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
