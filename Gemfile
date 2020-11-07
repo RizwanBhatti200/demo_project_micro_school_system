@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'letter_opener', group: :development
 gem "paperclip"
 gem "administrate"
+gem 'administrate-field-select', require: 'administrate/field/select_basic'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

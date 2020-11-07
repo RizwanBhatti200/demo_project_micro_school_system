@@ -13,7 +13,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     first_name: Field::String,
     last_name: Field::String,
     gender: Field::Number,
-    grade: Field::String,
+    grade: MultipleSelectFieldField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
