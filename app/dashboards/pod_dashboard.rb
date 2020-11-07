@@ -11,11 +11,11 @@ class PodDashboard < Administrate::BaseDashboard
     parent: Field::BelongsTo,
     students: Field::HasMany,
     teacher: Field::BelongsTo,
-    image: Field::HasOne,
     id: Field::Number,
     zipcode: Field::String,
     pod_name: Field::String,
     description: Field::String,
+    active: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -29,7 +29,7 @@ class PodDashboard < Administrate::BaseDashboard
   parent
   students
   teacher
-  image
+  active
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -38,11 +38,12 @@ class PodDashboard < Administrate::BaseDashboard
   parent
   students
   teacher
-  image
+
   id
   zipcode
   pod_name
   description
+  active
   created_at
   updated_at
   ].freeze
@@ -54,10 +55,10 @@ class PodDashboard < Administrate::BaseDashboard
   parent
   students
   teacher
-  image
   zipcode
   pod_name
   description
+  active
   ].freeze
 
   # COLLECTION_FILTERS
