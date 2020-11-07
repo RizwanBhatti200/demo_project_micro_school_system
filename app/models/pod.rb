@@ -7,6 +7,8 @@ class Pod < ApplicationRecord
     has_one :image, as: :imageable, dependent: :destroy
     accepts_nested_attributes_for :image
 
+    paginates_per 3
+
     def assign_teacher
         self.teacher = Teacher.all.sample if self.teacher.blank?
     end

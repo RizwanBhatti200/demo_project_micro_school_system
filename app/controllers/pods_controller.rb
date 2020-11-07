@@ -4,6 +4,7 @@ class PodsController < ApplicationController
   
   def index  
     @pods = params[:search].present? ? Pod.where(['zipcode LIKE ? ', "%#{params[:search]}%"]) : Pod.all
+    @pods =  @pods.page(params[:page])
   end
 
   def show
