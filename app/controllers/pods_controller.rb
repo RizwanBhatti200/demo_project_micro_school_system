@@ -4,7 +4,7 @@ class PodsController < ApplicationController
   
   def index  
     @pods = params[:search].present? ? Pod.where(['zipcode LIKE ? ', "%#{params[:search]}%"]) : Pod.all
-    @pods =  @pods.page(params[:page])
+    @pods =  @pods.active.page(params[:page])
   end
 
   def show
@@ -39,7 +39,7 @@ class PodsController < ApplicationController
         format.html { redirect_to @pod, notice: 'Pod was successfully updated.' }
         format.json { render :show, status: :ok, location: @pod }
       else
-        format.html { render :edit }
+        formatz.html { render :edit }
         format.json { render json: @pod.errors, status: :unprocessable_entity }
       end
     end

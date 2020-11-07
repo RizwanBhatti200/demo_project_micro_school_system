@@ -9,5 +9,8 @@
 
 
 <%= render 'students/student' %>
+<h1>Active Pods</h1>
+<%= render 'pods/pods', pods: @parent.pods.active %>
+<h1>Inactive Pods</h1>
 
-<%= render 'pods/pods', pods: @parent.pods %>
+<%= render 'pods/pods', pods: @parent.pods.inactive %>
