@@ -34,5 +34,14 @@
   <strong>Grade:</strong>
   <%= @pod.teacher.grade %>
 </p>
-<%= link_to 'Edit', edit_pod_path(@pod) %> |
-<%= link_to 'Back', pods_path %>
+
+<p>
+  <%= link_to 'Add Review', new_pod_review_path(@pod) %> 
+</p>
+<%= render @pod.reviews  %>
+
+
+  <%= link_to 'Edit', edit_pod_path(@pod) %> |
+  <%= link_to 'Back', pods_path %>
+
+</p>

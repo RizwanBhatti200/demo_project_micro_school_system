@@ -8,6 +8,11 @@ class PodsController < ApplicationController
   end
 
   def show
+    # if @pod.reviews.blank?
+    #   @avrage_review = 0
+    # else
+    #   @average_review = @pod.reviews.average(:rating).round(2)
+    # end
   end
 
   def new

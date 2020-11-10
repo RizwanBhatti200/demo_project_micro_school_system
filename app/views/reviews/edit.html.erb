@@ -1,4 +1,5 @@
-<%= form_for([@pod, @pod.reviews.build],html: { multipart: true }) do |form| %>
+<%= form_for([@pod, @review],html: { multipart: true }) do |form| %>
+<h1>Edit Review</h1>
   <div class="rating-form">
     <%= form.label :rating %>
     <%= form.text_field :rating %>

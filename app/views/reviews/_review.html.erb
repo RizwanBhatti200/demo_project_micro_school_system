@@ -1,0 +1,22 @@
+<div class="star-rating " data-score="<%= review.rating %>"></div>
+<p>
+  <strong>Comment:</strong>
+  <%= review.comment %>
+
+<% if parent_signed_in? %>
+  <% if review.parent_id == current_parent.id%>
+</p>
+  <%= link_to 'Edit', edit_pod_review_path(review.pod, review) %> |
+  <%= link_to 'Destroy', pod_review_path(review.pod, review), method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+  <% end %>
+<% end %>
+  <script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function () {
+      return $(this).attr('data-score');
+    }
+  });
+  </script>
