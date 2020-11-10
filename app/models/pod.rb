@@ -3,6 +3,7 @@ class Pod < ApplicationRecord
 
     belongs_to :parent
     has_many :students
+    has_many :reviews
     belongs_to :teacher, optional: true
     has_one :image, as: :imageable, dependent: :destroy
     accepts_nested_attributes_for :image
