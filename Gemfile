@@ -33,6 +33,9 @@ gem 'administrate-field-select', require: 'administrate/field/select_basic'
 #for pagination 
 gem 'kaminari'
 
+gem 'webpacker'
+gem 'tailwindcss'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
