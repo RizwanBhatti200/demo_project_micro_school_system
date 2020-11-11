@@ -1,4 +1,3 @@
 class Review < ApplicationRecord
-    belongs_to :pod
-    belongs_to :parent
+    belongs_to :reviewable, polymorphic: true
 end

@@ -2,6 +2,7 @@ class Parent < ApplicationRecord
   has_many :students
   has_many :pods
   has_many :reviews
+  has_many :reviews , as: :reviewable
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
 

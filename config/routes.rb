@@ -10,9 +10,12 @@ Rails.application.routes.draw do
     end
   devise_for :parents
 
-  resources :pods do
-    resources :reviews
-  end
+  resources :teachers, only: [:show]
+
+  resources :pods
+
+  resources :reviews
+  
   resources :parents, only: [:edit, :show, :update] do
     resources :students
   end
