@@ -1,0 +1,22 @@
+<h1>Teacher Show</h1>
+<p>
+  <strong>First Name:</strong>
+  <%= @teacher.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @teacher.last_name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @teacher.gender %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @teacher.grade %>
+</p>
+
+<%= render @teacher.reviews  %>

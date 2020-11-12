@@ -1,21 +1,21 @@
 class ReviewsController < ApplicationController
-before_action :find_pod
-before_action :find_review, only: [:edit, :update, :destory]
+before_action :find_review, only: [:edit,:show, :update, :destory]
     
 
  def new
-     @review = Review.new
+    @review = current_parent.reviews.new
  end
+ def show; end
+ 
 
  def create
-     @review = Review.new(review_params)
-     @review.pod_id = @pod.id
-     @review.parent_id = current_parent.id
-
-     if @review.save
-        redirect_to pod_path(@pod)
-    else
-        render :new
+    @review = current_parent.reviews.new(review_params)
+    respond_to do |format|
+        if @review.save
+            format.js
+        else
+            format.js
+        end
     end
  end
 
@@ -46,13 +46,9 @@ before_action :find_review, only: [:edit, :update, :destory]
  
  private
     def review_params
-        params.require(:review).permit(:rating, :comment)
+        params.require(:review).permit(:rating , :reviewable_id, :reviewable_type)
     end
 
-    def find_pod
-        @pod = Pod.find(params[:pod_id])
-    end
-    
     def find_review
         @review = Review.find(params[:id])
     end
