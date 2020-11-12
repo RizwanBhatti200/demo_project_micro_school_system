@@ -1,7 +1,7 @@
 
 <% if @review.persisted? %>
   $('#new-review').hide();
-  $('#pod-reviews').append("<%= j render @review %>")
+  $('#pod-reviews').prepend("<%= j render @review %>")
 
 <% end %>
 
