@@ -1,5 +1,5 @@
 class PodsController < ApplicationController
-
+  before_action :authenticate_parent!, except: [ :index ]
   before_action :set_pod, only: [:show, :edit, :update, :destroy]
   
   def index  

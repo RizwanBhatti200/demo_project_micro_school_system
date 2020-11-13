@@ -13,16 +13,16 @@ class ParentDashboard < Administrate::BaseDashboard
     # image: Field::HasOne,
     id: Field::Number,
     email: Field::String,
-    encrypted_password: Field::String,
-    reset_password_token: Field::String,
-    reset_password_sent_at: Field::DateTime,
-    remember_created_at: Field::DateTime,
-    confirmation_token: Field::String,
-    confirmed_at: Field::DateTime,
-    confirmation_sent_at: Field::DateTime,
-    unconfirmed_email: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    # encrypted_password: Field::String,
+    # reset_password_token: Field::String,
+    # reset_password_sent_at: Field::DateTime,
+    # remember_created_at: Field::DateTime,
+    # confirmation_token: Field::String,
+    # confirmed_at: Field::DateTime,
+    # confirmation_sent_at: Field::DateTime,
+    # unconfirmed_email: Field::String,
+    # created_at: Field::DateTime,
+    # updated_at: Field::DateTime,
     first_name: Field::String,
     last_name: Field::String,
     address: Field::String,
@@ -39,6 +39,7 @@ class ParentDashboard < Administrate::BaseDashboard
   students
   pods
   id
+  email
   active
   admin
   ].freeze
@@ -50,16 +51,6 @@ class ParentDashboard < Administrate::BaseDashboard
   pods
   id
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
-  confirmation_token
-  confirmed_at
-  confirmation_sent_at
-  unconfirmed_email
-  created_at
-  updated_at
   first_name
   last_name
   address
@@ -74,14 +65,6 @@ class ParentDashboard < Administrate::BaseDashboard
   students
   pods
   email
-  encrypted_password
-  reset_password_token
-  reset_password_sent_at
-  remember_created_at
-  confirmation_token
-  confirmed_at
-  confirmation_sent_at
-  unconfirmed_email
   first_name
   last_name
   address
