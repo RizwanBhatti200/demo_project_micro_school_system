@@ -10,7 +10,7 @@ class StudentDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     parent: Field::BelongsTo,
     pod: Field::BelongsTo,
-    image: Field::HasOne,
+    # image: Field::HasOne,
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
@@ -19,6 +19,7 @@ class StudentDashboard < Administrate::BaseDashboard
     gender: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    active: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -29,8 +30,8 @@ class StudentDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   parent
   pod
-  image
   id
+  active
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -38,7 +39,6 @@ class StudentDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   parent
   pod
-  image
   id
   first_name
   last_name
@@ -47,6 +47,7 @@ class StudentDashboard < Administrate::BaseDashboard
   gender
   created_at
   updated_at
+  active
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -55,12 +56,12 @@ class StudentDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   parent
   pod
-  image
   first_name
   last_name
   grade
   age
   gender
+  active
   ].freeze
 
   # COLLECTION_FILTERS

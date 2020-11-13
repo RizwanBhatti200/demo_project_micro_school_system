@@ -16,6 +16,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     grade: MultipleSelectFieldField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    active: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -28,6 +29,7 @@ class TeacherDashboard < Administrate::BaseDashboard
   id
   first_name
   last_name
+  active
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -41,6 +43,7 @@ class TeacherDashboard < Administrate::BaseDashboard
   grade
   created_at
   updated_at
+  active
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -52,6 +55,7 @@ class TeacherDashboard < Administrate::BaseDashboard
   last_name
   gender
   grade
+  active
   ].freeze
 
   # COLLECTION_FILTERS

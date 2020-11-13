@@ -10,7 +10,7 @@ class ParentDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     students: Field::HasMany,
     pods: Field::HasMany,
-    image: Field::HasOne,
+    # image: Field::HasOne,
     id: Field::Number,
     email: Field::String,
     encrypted_password: Field::String,
@@ -26,6 +26,7 @@ class ParentDashboard < Administrate::BaseDashboard
     first_name: Field::String,
     last_name: Field::String,
     address: Field::String,
+    active: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -36,8 +37,8 @@ class ParentDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   students
   pods
-  image
   id
+  active
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -45,7 +46,6 @@ class ParentDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   students
   pods
-  image
   id
   email
   encrypted_password
@@ -61,6 +61,7 @@ class ParentDashboard < Administrate::BaseDashboard
   first_name
   last_name
   address
+  active
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -69,7 +70,6 @@ class ParentDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   students
   pods
-  image
   email
   encrypted_password
   reset_password_token
@@ -82,6 +82,7 @@ class ParentDashboard < Administrate::BaseDashboard
   first_name
   last_name
   address
+  active
   ].freeze
 
   # COLLECTION_FILTERS
