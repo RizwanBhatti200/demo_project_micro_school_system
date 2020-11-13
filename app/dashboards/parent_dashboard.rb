@@ -27,6 +27,7 @@ class ParentDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     address: Field::String,
     active: Field::Boolean,
+    admin: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -39,6 +40,7 @@ class ParentDashboard < Administrate::BaseDashboard
   pods
   id
   active
+  admin
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -62,6 +64,7 @@ class ParentDashboard < Administrate::BaseDashboard
   last_name
   address
   active
+  admin
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -83,6 +86,7 @@ class ParentDashboard < Administrate::BaseDashboard
   last_name
   address
   active
+  admin
   ].freeze
 
   # COLLECTION_FILTERS

@@ -12,9 +12,4 @@ class Parent < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
   # validates  :email, uniqueness: true, presence: true
-
-  # def send_email
-  #   ParentMailer.delay.thank_you(self)
-
-  # end
 end
