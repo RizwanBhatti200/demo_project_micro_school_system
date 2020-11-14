@@ -1,5 +1,3 @@
-<h1>Pods</h1>
-
 <table>
   <thead>
     <tr>
@@ -17,8 +15,10 @@
         <td><%= pod.pod_name %></td>
         <td><%= pod.description %></td>
         <td><%= link_to 'Show', pod %></td>
-        <td><%= link_to 'Edit', edit_pod_path(pod) %></td>
-        <td><%= link_to 'Destroy', pod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if @parent&.id == current_parent&.id %>
+          <td><%= link_to 'Edit', edit_pod_path(pod) %></td>
+          <td><%= link_to 'Destroy', pod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

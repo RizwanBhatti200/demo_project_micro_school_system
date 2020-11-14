@@ -41,8 +41,9 @@
 <div id='pod-reviews'>
   <%= render @pod.reviews  %>
 </div>
-
-  <%= link_to 'Edit', edit_pod_path(@pod) %> |
+  <% if @pod.parent_id == current_parent.id %>
+    <%= link_to 'Edit', edit_pod_path(@pod) %> |
+  <% end %>  
   <%= link_to 'Back', pods_path %>
 
 </p>

@@ -1,5 +1,5 @@
 class ParentsController < ApplicationController
-
+  before_action :authenticate_parent!
   before_action :set_parent, only: %i[show edit update destroy]
 
   

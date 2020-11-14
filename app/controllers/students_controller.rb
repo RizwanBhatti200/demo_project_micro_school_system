@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
 
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_parent, only: [:new,:edit, :update, :destory]
+  before_action :user_permision, only: [:new,:edit,:update, :destory]
 
   def index
     @students = current_parent.students
@@ -58,5 +60,9 @@ class StudentsController < ApplicationController
 
     def student_params
       params.require(:student).permit(:first_name, :last_name, :age, :gender, :grade, image_attributes: [:avatar])
+    end
+
+    def set_parent
+      @parent = @student.parent
     end
 end

@@ -1,16 +1,17 @@
-<p  class="">
-    <%=link_to 'Profile Edit', edit_parent_registration_path(current_parent) %> |
+<% if @parent.id == current_parent.id %>
+  <p>
+    <%= link_to 'Profile Edit', edit_parent_registration_path(current_parent) %> |
     <%= link_to 'New Student', new_parent_student_path(current_parent) %> |
     <%= link_to 'New Pod', new_pod_path(current_parent) %> 
-</p>
-
+  </p>
+<% end %>
 <%= render 'shared/show_picture', image: @parent.image %>
 <%= render 'parents/profile' %>
 
 
 <%= render 'students/student' %>
 <h1>Active Pods</h1>
-<%= render 'pods/pods', pods: @parent.pods.active %>
+<%= render 'pods/pods', pods: @parent.pods.active, display_link: true %>
 <h1>Inactive Pods</h1>
 
 <%= render 'pods/pods', pods: @parent.pods.inactive %>

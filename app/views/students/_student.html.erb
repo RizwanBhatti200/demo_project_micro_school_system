@@ -21,11 +21,14 @@
         <td><%= student.age %></td>
         <td><%= student.gender %></td>
         <td><%= link_to 'Show', parent_student_path(@parent, student) %></td>
-        <td><%= link_to 'Edit', edit_parent_student_path(@parent, student) %></td>
-        <td><%= link_to 'Destroy', [@parent, student], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if @parent&.id == current_parent&.id %>
+          <td><%= link_to 'Edit', edit_parent_student_path(@parent, student) %></td>
+          <td><%= link_to 'Destroy', [@parent, student], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
+
 </table>
 
 <br>

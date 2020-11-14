@@ -1,6 +1,9 @@
 class PodsController < ApplicationController
   before_action :authenticate_parent!, except: [ :index ]
   before_action :set_pod, only: [:show, :edit, :update, :destroy]
+  before_action :set_parent, only: [:new,:edit, :update, :destory]
+  before_action :user_permision, only: [:new,:edit,:update, :destory]
+
   
   def index  
     @pods = params[:search].present? ? Pod.where(['zipcode LIKE ? ', "%#{params[:search]}%"]) : Pod.all
@@ -61,6 +64,10 @@ class PodsController < ApplicationController
   private
     def set_pod
       @pod = Pod.find(params[:id])
+    end
+
+    def set_parent
+      @parent = @pod.parent
     end
 
     def pod_params

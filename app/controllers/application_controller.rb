@@ -7,11 +7,17 @@ class ApplicationController < ActionController::Base
   before_action :banned?
 
     def banned?
-      # byebug
-      unless current_parent&.active?
+      if current_parent.present? && !current_parent.active?
         sign_out current_parent
         flash[:notice] = "This account has been suspended...."
-        root_path
+        redirect_to root_path
+      end
+    end
+
+    def user_permision
+      unless @parent == current_parent
+        flash[:notice] = "Permisions denied"
+        redirect_to root_path
       end
     end
 

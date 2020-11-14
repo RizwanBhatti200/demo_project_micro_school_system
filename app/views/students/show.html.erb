@@ -24,6 +24,7 @@
   <strong>Grade:</strong>
   <%= @student.grade %>
 </p>
-
-<%= link_to 'Edit', edit_parent_student_path(@student) %> |
+<% if @student.parent_id == current_parent.id %>
+  <%= link_to 'Edit', edit_parent_student_path(@student) %> |
+<% end %>  
 <%= link_to 'Back', parent_students_path %>
