@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   devise_for :parents
 
-  resources :teachers, only: [:show]
+  resources :teachers, only: [:show, :index]
 
   resources :pods
 
