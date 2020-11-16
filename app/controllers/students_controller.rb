@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
 
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_action :set_parent, only: [:new,:edit, :update, :destory]
+  before_action :set_parent, only: [:edit, :update, :destory]
   before_action :user_permision, only: [:new,:edit,:update, :destory]
 
   def index

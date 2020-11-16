@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
     end
 
     def user_permision
-      unless @parent == current_parent
+
+      if @parent.present? && @parent != current_parent
         flash[:notice] = "Permisions denied"
         redirect_to root_path
       end
