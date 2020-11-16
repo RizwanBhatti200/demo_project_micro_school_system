@@ -10,6 +10,8 @@ class Pod < ApplicationRecord
     belongs_to :teacher, optional: true
     
     has_one :image, as: :imageable, dependent: :destroy
+
+    has_one :join_requst
     
     accepts_nested_attributes_for :image
     
