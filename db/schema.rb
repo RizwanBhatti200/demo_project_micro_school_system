@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_071308) do
+ActiveRecord::Schema.define(version: 2020_11_16_071956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2020_11_13_071308) do
     t.datetime "avatar_updated_at"
     t.index ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
+  end
+
+  create_table "join_requsts", force: :cascade do |t|
+    t.boolean "approval", default: false
+    t.integer "pod_id"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pod_id", "student_id"], name: "index_join_requsts_on_pod_id_and_student_id", unique: true
   end
 
   create_table "parents", force: :cascade do |t|
