@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :reviews
   
-  resources :parents, only: [:edit, :show, :update] do
+  resources :parents, only: [:index,:edit, :show, :update] do
     resources :students
   end
 

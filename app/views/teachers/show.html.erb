@@ -18,5 +18,9 @@
   <strong>Grade:</strong>
   <%= @teacher.grade %>
 </p>
-
-<%= render @teacher.reviews  %>
+<div id="new-review">
+  <%= link_to image_tag("Red_star.ico"), new_review_path(reviewable_id: @teacher.id, reviewable_type: @teacher.class.name),  remote: true  %> 
+</div>
+<div id='pod-reviews'>
+  <%= render @teacher.reviews  %>
+</div>

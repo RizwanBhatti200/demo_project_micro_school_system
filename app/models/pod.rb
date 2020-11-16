@@ -17,9 +17,4 @@ class Pod < ApplicationRecord
 
     scope :active, -> { where(active: true) }
     scope :inactive, -> { where(active: false) }
-
-    def assign_teacher
-        self.teacher = Teacher.all.sample if self.teacher.blank?
-    end
-
 end
