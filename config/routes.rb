@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :pods
 
   resources :reviews
+
+  resources :join_requests, only: [:create]
   
   resources :parents, only: [:index,:edit, :show, :update] do
     resources :students
