@@ -1,6 +1,6 @@
-class CreateJoinRequsts < ActiveRecord::Migration[5.2]
+class CreateJoinRequests < ActiveRecord::Migration[5.2]
   def change
-    create_table :join_requsts do |t|
+    create_table :join_requests do |t|
       t.boolean :approval, default: false
       t.integer :pod_id
       t.integer :student_id

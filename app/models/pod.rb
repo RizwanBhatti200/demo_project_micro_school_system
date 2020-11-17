@@ -11,7 +11,7 @@ class Pod < ApplicationRecord
     
     has_one :image, as: :imageable, dependent: :destroy
 
-    has_one :join_requst
+    has_one :join_request
     
     accepts_nested_attributes_for :image
     

@@ -28,13 +28,13 @@ ActiveRecord::Schema.define(version: 2020_11_16_071956) do
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
   end
 
-  create_table "join_requsts", force: :cascade do |t|
+  create_table "join_requests", force: :cascade do |t|
     t.boolean "approval", default: false
     t.integer "pod_id"
     t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pod_id", "student_id"], name: "index_join_requsts_on_pod_id_and_student_id", unique: true
+    t.index ["pod_id", "student_id"], name: "index_join_requests_on_pod_id_and_student_id", unique: true
   end
 
   create_table "parents", force: :cascade do |t|
