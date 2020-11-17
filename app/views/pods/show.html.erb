@@ -36,7 +36,7 @@
 </p>
 
 <!-- component -->
-<%= render 'join' %>
+<%= render 'join', pod: @pod %>
 
 <div id="new-review">
   <%= link_to image_tag("Red_star.ico"), new_review_path(reviewable_id: @pod.id, reviewable_type: @pod.class.name),  remote: true  %> 

@@ -1,5 +1,5 @@
-<div>
-    <button onclick="openModal()" class='bg-blue-500 text-white p-2 rounded text-2xl font-bold'>Apply Now</button>
+<div class='norway'>
+    <button onclick="openModal()" class=''>Apply Now</button>
 </div>
 
 <div class=" hidden main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
@@ -23,7 +23,7 @@
        <label>Students</label>
         <%=  form_with(model: JoinRequest.new, local: false, method: :post) do |f| %>
           <%= f.select :student_id, options_from_collection_for_select(current_parent.students, :id, :first_name),{ :prompt => "Please select"},{ multiple: true  ,required: true}  %>
-          <%= hidden_field_tag :pod_id, @pod.id %>
+          <%= hidden_field_tag :pod_id, pod.id %>
       </div>
       <!--Footer-->
       <div class="flex justify-end pt-2">
