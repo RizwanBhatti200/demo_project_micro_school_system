@@ -1,5 +1,4 @@
 class Pod < ApplicationRecord
-    before_create :assign_teacher
 
     belongs_to :parent
 

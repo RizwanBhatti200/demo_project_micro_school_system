@@ -15,11 +15,11 @@
         <td><%= pod.pod_name %></td>
         <td><%= pod.description %></td>
         <td><%= link_to 'Show', pod %></td>
-        <% if @parent&.id == current_parent&.id %>
+        <% if current_parent.present? && @parent&.id == current_parent.id %>
           <td><%= link_to 'Edit', edit_pod_path(pod) %></td>
           <td><%= link_to 'Destroy', pod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
-        <td><%= render "pods/join", pod: pod %></td>
+        <td><%= render "pods/join", pod: pod, parent: current_parent  %></td>
       </tr>
     <% end %>
   </tbody>
