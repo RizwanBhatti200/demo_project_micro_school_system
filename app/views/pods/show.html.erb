@@ -14,27 +14,27 @@
   <strong>Description:</strong>
   <%= @pod.description %>
 </p>
+<% if @pod.teacher_id.present? %>
+  <p>
+    <strong>Teacher First Name:</strong>
+    <%= @pod.teacher&.first_name %>
+  </p>
 
-<p>
-  <strong>Teacher First Name:</strong>
-  <%= @pod.teacher.first_name %>
-</p>
+  <p>
+    <strong>Teacher Last Name:</strong>
+    <%= @pod.teacher&.last_name %>
+  </p>
 
-<p>
-  <strong>Teacher Last Name:</strong>
-  <%= @pod.teacher.last_name %>
-</p>
+  <p>
+    <strong>Gender:</strong>
+    <%= @pod.teacher&.gender %>
+  </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @pod.teacher.gender %>
-</p>
-
-<p>
-  <strong>Grade:</strong>
-  <%= @pod.teacher.grade %>
-</p>
-
+  <p>
+    <strong>Grade:</strong>
+    <%= @pod.teacher&.grade %>
+  </p>
+<% end %>
 <!-- component -->
 <%= render 'join', pod: @pod, parent: current_parent %>
 
