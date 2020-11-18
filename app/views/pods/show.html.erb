@@ -17,22 +17,22 @@
 <% if @pod.teacher_id.present? %>
   <p>
     <strong>Teacher First Name:</strong>
-    <%= @pod.teacher&.first_name %>
+    <%= @pod.teacher.first_name %>
   </p>
 
   <p>
     <strong>Teacher Last Name:</strong>
-    <%= @pod.teacher&.last_name %>
+    <%= @pod.teacher.last_name %>
   </p>
 
   <p>
     <strong>Gender:</strong>
-    <%= @pod.teacher&.gender %>
+    <%= @pod.teacher.gender %>
   </p>
 
   <p>
     <strong>Grade:</strong>
-    <%= @pod.teacher&.grade %>
+    <%= @pod.teacher.grade.reject(&:empty?).join(',') %>
   </p>
 <% end %>
 <!-- component -->
