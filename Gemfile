@@ -35,7 +35,6 @@ gem 'kaminari'
 
 gem 'webpacker'
 gem 'tailwindcss'
-gem 'cancancan'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
