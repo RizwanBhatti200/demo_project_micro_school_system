@@ -41,6 +41,6 @@ class ParentsController < ApplicationController
   end
 
   def parent_params
-    params.require(:parent).permit(:email, image_attributes:[:avatar] )
+    params.require(:parent).permit(:email, image_attributes:[:avatar, :id] )
   end
 end
