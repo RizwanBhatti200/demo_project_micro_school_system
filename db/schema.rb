@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_071956) do
+ActiveRecord::Schema.define(version: 2020_11_19_082944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_11_16_071956) do
     t.bigint "pod_id"
     t.string "first_name"
     t.string "last_name"
-    t.string "grade", limit: 3
+    t.string "grade"
     t.integer "age"
     t.integer "gender"
     t.datetime "created_at", null: false
