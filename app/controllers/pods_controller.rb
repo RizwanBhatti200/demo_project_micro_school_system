@@ -47,7 +47,7 @@ class PodsController < ApplicationController
         format.html { redirect_to @pod, notice: 'Pod was successfully updated.' }
         format.json { render :show, status: :ok, location: @pod }
       else
-        formatz.html { render :edit }
+        format.html { render :edit }
         format.json { render json: @pod.errors, status: :unprocessable_entity }
       end
     end

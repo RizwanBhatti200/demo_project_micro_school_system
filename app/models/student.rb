@@ -7,5 +7,9 @@ class Student < ApplicationRecord
 
   accepts_nested_attributes_for :image
 
+  validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/,message: "only allows letters" }
+  validates :grade, presence: true, inclusion: { in: GRADE, message: "%{value} is not a valid please add one grade at time" }
+  validates :age, presence: true,inclusion: { in: [*1..15], message: "%{value} is not a valid please add under 15 years " }
+
   enum gender: { male: 0, female: 1 }
 end

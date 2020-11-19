@@ -16,6 +16,12 @@ class Pod < ApplicationRecord
     
     paginates_per 3
 
+    validates :zipcode, presence: true,
+  format: { with: /[0-9]+/ },
+  length: { minimum: 5 , maximum:5},
+  uniqueness: true
+  validates :pod_name, presence: true
+
     scope :active, -> { where(active: true) }
     scope :inactive, -> { where(active: false) }
 end

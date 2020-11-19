@@ -5,6 +5,9 @@ class Parent < ApplicationRecord
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image
 
+  validates :first_name, presence: true, format: { with: /\A[a-zA-Z]+\z/,message: "only allows letters" }
+  # validates :address, presence: true 
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

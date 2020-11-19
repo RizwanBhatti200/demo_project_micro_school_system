@@ -14,8 +14,12 @@ class StudentDashboard < Administrate::BaseDashboard
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
-    grade: Field::String,
-    age: Field::Number,
+    grade: Field::SelectBasic.with_options({
+      choices: ['k1','k2','1','2','3','4','5','6','7','8']
+    }),
+    age: Field::SelectBasic.with_options({
+      choices: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
+    }),
     gender: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
