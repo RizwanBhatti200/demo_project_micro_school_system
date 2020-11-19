@@ -7,5 +7,5 @@ class Student < ApplicationRecord
 
   accepts_nested_attributes_for :image
 
-  enum gender: { male: 0, female: 1, no_gender: 3 }
+  enum gender: { male: 0, female: 1 }
 end

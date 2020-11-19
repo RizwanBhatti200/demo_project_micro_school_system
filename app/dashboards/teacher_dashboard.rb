@@ -12,7 +12,9 @@ class TeacherDashboard < Administrate::BaseDashboard
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
-    gender: Field::Number,
+    gender: Field::SelectBasic.with_options({
+      choices: ['Male','Female']
+    }),
     grade: MultipleSelectFieldField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,

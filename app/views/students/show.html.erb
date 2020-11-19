@@ -2,15 +2,9 @@
 <%= render 'shared/show_picture', image: @student.image %>
 
 <p>
-  <strong>First name:</strong>
-  <%= @student.first_name %>
+  <strong>Name:</strong>
+  <%= [@student.first_name, @student.last_name].join(' ').titleize %>
 </p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @student.last_name %>
-</p>
-
 <p>
   <strong>Age:</strong>
   <%= @student.age %>

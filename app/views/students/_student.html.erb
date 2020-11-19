@@ -15,11 +15,10 @@
   <tbody>
     <% @parent.students.each do |student| %>
       <tr>
-        <td><%= student.first_name %></td>
-        <td><%= student.last_name %></td>
+        <td><%= [student.first_name,student.last_name].join(' ').titleize %></td>
          <td><%= student.grade %></td>
         <td><%= student.age %></td>
-        <td><%= student.gender %></td>
+        <td><%= student.gender.titleize %></td>
         <td><%= link_to 'Show', parent_student_path(@parent, student) %></td>
         <% if @parent&.id == current_parent&.id %>
           <td><%= link_to 'Edit', edit_parent_student_path(@parent, student) %></td>

@@ -1,13 +1,7 @@
 <p>
-  <strong>First Name:</strong>
-  <%= @parent.first_name %>
+  <strong>Name:</strong>
+  <%= [@parent.first_name,@parent.last_name].join(' ').titleize  %>
 </p>
-
-<p>
-  <strong>Last Name:</strong>
-  <%= @parent.last_name %>
-</p>
-
 <p>
   <strong>Address:</strong>
   <%= @parent.address %>
