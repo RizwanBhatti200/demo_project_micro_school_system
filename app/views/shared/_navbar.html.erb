@@ -1,26 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<%# <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Micro School System</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
-    
+     %>
     <% if parent_signed_in? %>
 
-       <%=link_to 'Profile', parent_path(current_parent) %> |
+       <%link_to 'Profile', parent_path(current_parent) %> 
 
-       <%=link_to 'Sign out', destroy_parent_session_path, method: :delete%>
+       <%link_to 'Sign out', destroy_parent_session_path, method: :delete%>
 
       <% else %>
 
-        <%=link_to 'Register', new_parent_registration_path%> |
+        <%link_to 'Register', new_parent_registration_path%> 
 
-        <%=link_to 'Sign in', new_parent_session_path %>
+        <%link_to 'Sign in', new_parent_session_path %>
 
     <% end %>
     
       
-    </ul>
+    <%# </ul>
   </div>
-</nav>
+</nav> %>
