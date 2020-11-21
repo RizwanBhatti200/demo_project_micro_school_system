@@ -4,13 +4,12 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-     %>
+    <ul class="navbar-nav ml-auto"> %>
     <% if parent_signed_in? %>
 
-       <%link_to 'Profile', parent_path(current_parent) %> 
+       <%=link_to 'Profile', parent_path(current_parent) %> |
 
-       <%link_to 'Sign out', destroy_parent_session_path, method: :delete%>
+       <%=link_to 'Sign out', destroy_parent_session_path, method: :delete%>
 
       <% else %>
 
