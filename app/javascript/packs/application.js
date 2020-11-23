@@ -4,9 +4,11 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 import 'jquery';
+window.jQuery = $;
+window.$ = $;
 require("@rails/ujs").start()
 require("turbolinks").start()
-require("stylesheet/application.scss").start()
+require("stylesheet/application.scss")
 require("packs/custom")
 require("packs/jquery.raty")
 require("packs/popup")
