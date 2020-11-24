@@ -6,9 +6,10 @@
 import 'jquery';
 window.jQuery = $;
 window.$ = $;
+import '../stylesheets/application.css';
 require("@rails/ujs").start()
 require("turbolinks").start()
-require("stylesheet/application.scss")
+require("javascript/stylesheets/application.css")
 require("packs/custom")
 require("packs/jquery.raty")
 require("packs/popup")
