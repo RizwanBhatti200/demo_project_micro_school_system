@@ -1,28 +1,37 @@
-<table>
-  <thead>
-    <tr>
-      <th>Zipcode</th>
-      <th>Pod Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- component -->
+<% search ||= false %>
+<div class="text-gray-900 bg-gray-200">
+  <% if search.present? %>
+    <%= render 'pods/search'  %>
+  <% end %>
+  <div class="p-4 flex">
+    <h1 class="text-3xl">Pods</h1>
+  </div>
 
-  <tbody>
-    <% pods.each do |pod| %>
-      <tr>
-        <td><%= pod.zipcode %></td>
-        <td><%= pod.pod_name %></td>
-        <td><%= pod.description %></td>
-        <td><%= link_to 'Show', pod %></td>
-        <% if current_parent.present? && @parent&.id == current_parent.id %>
-          <td><%= link_to 'Edit', edit_pod_path(pod) %></td>
-          <td><%= link_to 'Destroy', pod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <div class="px-3 py-4 flex justify-center">
+    <table class="w-full text-md bg-white shadow-md rounded mb-4">
+      <thead class="border-b">
+        <th class="text-left p-3 px-5">Zipcode</th>
+        <th class="text-left p-3 px-5">Pod Name</th>
+        <th class="text-left p-3 px-5">Description</th>
+      </thead>
+      <tbody>
+        <% pods.each do |pod| %>
+          <tr class="border-b hover:bg-orange-100 bg-gray-100">
+            <td class="p-3 px-5"><%= pod.zipcode %></td>
+            <td class="p-3 px-5"><%= pod.pod_name %></td>
+            <td class="p-3 px-5"><%= pod.description %></td>
+            <td class="p-3 px-5 flex justify-end">
+              <%= link_to 'Show', pod , class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-3 px-5 mr-2 rounded focus:outline-none focus:shadow-outline'%>
+              <% if current_parent.present? && @parent&.id == current_parent.id %>
+                <%= link_to 'Edit', edit_pod_path(pod), class:'text-sm bg-blue-500 hover:bg-blue-700 text-white p-3 px-5 mr-2 rounded focus:outline-none focus:shadow-outline'%>
+                <%= link_to 'Destroy', pod, method: :delete, data: { confirm: 'Are you sure?' } , class:'text-sm bg-red-600 hover:bg-red-700 text-white p-3 px-5 mr-2 rounded focus:outline-none focus:shadow-outline'%>
+              <% end %>
+            </td>
+          </tr>
         <% end %>
-        <td><% render "pods/join", pod: pod, parent: current_parent  %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<br>

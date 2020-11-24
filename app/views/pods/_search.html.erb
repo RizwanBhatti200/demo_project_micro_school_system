@@ -1,4 +1,6 @@
-<%= form_for(:pod, :url => { :action => "index" }, :html => {:method => :get} ) do %>
-  <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-  <%= submit_tag "Search", :name => nil %> 
+<div class="float-right mt-4 mr-2">
+  <%= form_for(:pod, :url => { :action => "index" }, :html => {:method => :get} ) do %>
+  <%= text_field_tag :search, params[:search], :id => 'search_field', class: " border-2 focus:outline-none  focus:border-blue-500 p-2 px-2 rounded-lg mb-4" ,placeholder:"Search" %>
+  <%= submit_tag "Search", :name => nil ,class: 'text-sm bg-blue-500 hover:bg-blue-600 text-white p-2 px-5 mr-2 rounded focus:outline-none focus:shadow-outline'%> 
 <% end %> 
+</div>
