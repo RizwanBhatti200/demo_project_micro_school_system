@@ -7,11 +7,11 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <h2>Resend confirmation instructions</h2>
         <div class="field">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) , class: "block border border-grey-light w-full p-3 rounded mb-4" ,placeholder:"Email"%>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) , class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"Email"%>
         </div>
 
         <div class="actions">
-          <%= f.submit "Resend confirmation instructions",  class:"w-full text-center py-3 rounded bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none my-1"  %>
+          <%= f.submit "Resend confirmation instructions", class:"w-full text-center py-3 rounded bg-blue-600 text-white hover:bg-blue-700 focus:outline-none my-1" %>
         </div>
           <%= render "devise/shared/links" %>
       </div>

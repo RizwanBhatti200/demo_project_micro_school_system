@@ -5,10 +5,10 @@
     <div class="bg-white px-6 py-8 rounded shadow-xl text-black w-full">
       <%= image_tag "logos/mlogo.png", class: "object-cover h-48 w-full" %>
         <div class="field">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block border  w-full p-3 rounded mb-4" ,placeholder:"Email"%>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block border-2 focus:outline-none focus:border-blue-500   w-full p-3 rounded mb-4" ,placeholder:"Email"%>
         </div>
         <div class="mt-2 ">
-          <%= f.password_field :password, autocomplete: "current-password" ,class: "block border w-full p-3 rounded mb-4" ,placeholder:"Password" %>
+          <%= f.password_field :password, autocomplete: "current-password" ,class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"Password" %>
         </div>
         <% if devise_mapping.rememberable? %>
           <div class="text-gray-900">
