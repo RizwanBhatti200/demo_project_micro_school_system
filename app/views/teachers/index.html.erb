@@ -1,26 +1,29 @@
-<h1>Teachers index</h1>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Gender</th>
-      <th>Grade</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="pb-10">
+  <div class="p-4 flex">
+    <h1 class="text-3xl">Teachers</h1>
+  </div>
+  <div class="px-3 py-4 flex justify-center">
+    <table class="w-full text-md bg-white shadow-md rounded mb-4">
+      <thead class="border-b">
+        <th class="text-left p-3 px-5">First Name</th>
+        <th class="text-left p-3 px-5">Last Name</th>
+        <th class="text-left p-3 px-5">Gender</th>
+        <th class="text-left p-3 px-5">Grade</th>
+      </thead>
+      <tbody>
+        <% @teachers.each do |teacher| %>
+          <tr class="border-b hover:bg-orange-100 bg-gray-100">
+            <td class="p-3 px-5"><%= teacher.first_name %></td>
+            <td class="p-3 px-5"><%= teacher.last_name %></td>
+            <td class="p-3 px-5"><%= teacher.gender %></td>
+            <td class="p-3 px-5"><%= teacher.grade.reject(&:empty?).join(',') %></td>
+            <td class="p-3 px-5 flex justify-end">
+            <%= link_to 'Show', teacher , class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-3 px-5 mr-2 rounded focus:outline-none focus:shadow-outline'%>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-  <tbody>
-    <% @teachers.each do |teacher| %>
-      <tr>
-        <td><%= teacher.first_name %></td>
-        <td><%= teacher.last_name %></td>
-        <td><%= teacher.gender %></td>
-        <td><%= teacher.grade %></td>
-        <td><%= link_to 'Show', teacher %></td>
-    <% end %>
-  </tbody>
-</table>
-
-<br>

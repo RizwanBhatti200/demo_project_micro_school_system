@@ -1,20 +1,23 @@
-<h1>Teacher Show</h1>
-<p>
+<div class="">
+<div class="inline-block h-full w-5/6 container  bg-white rounded-lg my-10 ml-24 p-4">
+<p class="mb-2">
   <strong>Name:</strong>
   <%= [@teacher.first_name,@teacher.last_name].join(' ').titleize  %>
 </p>
-<p>
+<p class="mb-2">
   <strong>Gender:</strong>
   <%= @teacher.gender %>
 </p>
 
-<p>
+<p class="mb-2">
   <strong>Grade:</strong>
-  <%= @teacher.grade %>
+  <%= @teacher.grade.reject(&:empty?).join(',') %>
 </p>
-<div id="new-review">
+<div id="new-review" class="mb-2">
   <%= link_to image_tag("Red_star.ico"), new_review_path(reviewable_id: @teacher.id, reviewable_type: @teacher.class.name),  remote: true  %> 
 </div>
-<div id='pod-reviews'>
+<div id='pod-reviews' class="mb-2">
   <%= render @teacher.reviews  %>
+</div>
+</div>
 </div>
