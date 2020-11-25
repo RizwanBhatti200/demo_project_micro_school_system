@@ -1,3 +1,5 @@
-<li class="page-item">
+<ul class="flex justify-self-center border border-grey-light  rounded w-auto  ">
+<li class="block text-blue-600 bg-white hover:text-white hover:bg-blue-500 text-blue px-3 py-2 flex  border border-grey-light rounded w-auto">
   <%= link_to_unless current_page.first?, raw(t 'views.pagination.first'), url, remote: remote, class: 'page-link' %>
 </li>
+<%# </ul> %>

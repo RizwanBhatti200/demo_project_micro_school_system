@@ -10,8 +10,6 @@
 
 
 <%= render 'students/student' %>
-<h1>Active Pods</h1>
-<%= render 'pods/pods', pods: @parent.pods.active, display_link: true %>
-<h1>Inactive Pods</h1>
+<%= render 'pods/pods', pods: @active_pods, title: 'Active Pods' %>
 
-<%= render 'pods/pods', pods: @parent.pods.inactive %>
+<%= render 'pods/pods', pods: @inactive_pods, title: 'Inactive Pods' %>

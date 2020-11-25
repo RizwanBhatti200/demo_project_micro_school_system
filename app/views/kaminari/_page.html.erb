@@ -1,9 +1,12 @@
 <% if page.current? %>
-  <li class="page-item active">
+<ul class="flex justify-self-center list-reset border border-grey-light rounded w-auto ">
+<li class="block active bg-white text-blue-600 hover:text-white hover:bg-blue-500 text-blue px-3 py-2"">
     <%= content_tag :a, page, data: { remote: remote }, rel: page.rel, class: 'page-link' %>
   </li>
 <% else %>
-  <li class="page-item">
+  <ul class="flex list-reset border border-grey-light rounded w-auto">
+<li class="block text-blue-600 bg-white hover:text-white hover:bg-blue-500 text-blue px-3 py-2"">
     <%= link_to page, url, remote: remote, rel: page.rel, class: 'page-link' %>
   </li>
+</ul>
 <% end %>

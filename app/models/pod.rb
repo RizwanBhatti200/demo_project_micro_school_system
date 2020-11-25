@@ -14,7 +14,7 @@ class Pod < ApplicationRecord
     
     accepts_nested_attributes_for :image
     
-    paginates_per 1
+    paginates_per 5
 
     validates :zipcode, presence: true,
   format: { with: /[0-9]+/ },

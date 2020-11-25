@@ -13,7 +13,11 @@ class ParentsController < ApplicationController
   end
 
 
-  def show; end
+  def show
+    @active_pods = @parent.pods.active.page(params[:page]).per(5)
+    @inactive_pods = @parent.pods.inactive.page(params[:page]).per(5)
+
+  end
 
   def edit
     @parent.build_image if @parent.image.blank?

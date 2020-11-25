@@ -1,11 +1,14 @@
 <!-- component -->
 <% search ||= false %>
-<div class="text-gray-900 bg-gray-200">
+<% title ||= 'Pods' %>
+
+<div class="text-gray-900 bg-gray-200 pb-10">
   <% if search.present? %>
     <%= render 'pods/search'  %>
   <% end %>
   <div class="p-4 flex">
-    <h1 class="text-3xl">Pods</h1>
+  
+    <h1 class="text-3xl"><%= title %></h1>
   </div>
 
   <div class="px-3 py-4 flex justify-center">
@@ -32,6 +35,9 @@
         <% end %>
       </tbody>
     </table>
+  </div>
+  <div>
+    <%= paginate pods %>
   </div>
 </div>
 
