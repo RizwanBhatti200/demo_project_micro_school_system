@@ -1,15 +1,20 @@
+<div class="">
+<div class="inline-block h-full w-5/6 container  bg-white rounded-lg my-10 ml-24 p-4">
 <% if @parent.id == current_parent.id %>
-  <p>
-    <%= link_to 'Profile Edit', edit_parent_registration_path(current_parent) %> |
-    <%= link_to 'New Student', new_parent_student_path(current_parent) %> |
-    <%= link_to 'New Pod', new_pod_path(current_parent) %> 
+  <p class='mb-2'>
+    <%= link_to 'Profile Edit', edit_parent_registration_path(current_parent), class:'text-sm bg-blue-500 hover:bg-blue-700 text-white p-3 px-5 mr-2 rounded focus:outline-none focus:shadow-outline float-right mr-12'%>
+    <% link_to 'New Student', new_parent_student_path(current_parent) %> 
+    <%link_to 'New Pod', new_pod_path(current_parent) %> 
   </p>
+  <%= render 'parents/profile' %>
 <% end %>
 <%= render 'shared/show_picture', image: @parent.image %>
-<%= render 'parents/profile' %>
+
 
 
 <%= render 'students/student' %>
 <%= render 'pods/pods', pods: @active_pods, title: 'Active Pods' %>
 
 <%= render 'pods/pods', pods: @inactive_pods, title: 'Inactive Pods' %>
+  </div>
+</div>

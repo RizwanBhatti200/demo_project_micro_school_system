@@ -1,27 +1,32 @@
-<br>
-<h1>Parent Index</h1>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th>First Name:</th>
-      <th>Last Name:</th>
-      <th>Address:</th>
-      <th>Email:</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- component -->
+<div class="pb-10">
+  <div class="p-4 flex">
+  
+    <h1 class="text-3xl">Parents</h1>
+  </div>
 
-  <tbody>
-    <% @parents.each do |parent| %>
-      <tr>
-        <td><%= parent.first_name %></td>
-        <td><%= parent.last_name %></td>
-        <td><%= parent.address %></td>
-        <td><%= parent.email %></td>
-        <td><%= link_to 'Show', parent %></td>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+  <div class="px-3 py-4 flex justify-center">
+    <table class="w-full text-md bg-white shadow-md rounded mb-4">
+      <thead class="border-b">
+        <th class="text-left p-3 px-5">First Name</th>
+        <th class="text-left p-3 px-5">Last Name</th>
+        <th class="text-left p-3 px-5">Address</th>
+      </thead>
+      <tbody>
+        <% @parents.each do |parent| %>
+          <tr class="border-b hover:bg-orange-100 bg-gray-100">
+            <td class="p-3 px-5"><%= parent.first_name %></td>
+            <td class="p-3 px-5"><%= parent.last_name %></td>
+            <td class="p-3 px-5"><%= parent.address %></td>
+            <% if current_parent.present? && @parent&.id == current_parent.id %>
+            <td class="p-3 px-5"><%= parent.email %></td>
+             <% end %>
+            <td class="p-3 px-5 flex justify-end">
+              <%= link_to 'Show', parent, class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-3 px-5 mr-2 rounded focus:outline-none focus:shadow-outline'%>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
