@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MicroSchoolSystem</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- This refers to app/javascript/stylesheets/application.scss-->
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class= 'bg-gray-200'>
+      <%= yield %>
+    </div>
+  </body>
+</html>
