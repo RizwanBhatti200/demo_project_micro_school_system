@@ -1,44 +1,49 @@
-<%= render 'shared/show_picture', image: @pod.image %>
+<div class="">
+<div class="inline-block h-full w-5/6 container  bg-white rounded-lg my-10 ml-24 p-4">
 
-<p>
-  <strong>Zipcode:</strong>
-  <%= @pod.zipcode %>
-</p>
+<%= render 'shared/show_picture', image: @pod.image ,class:'' %>
 
-<p>
+
+<p class="mb-2">
   <strong> Name:</strong>
   <%= @pod.pod_name %>
 </p>
 
-<p>
+<p class="mb-2">
+  <strong>Zipcode:</strong>
+  <%= @pod.zipcode %>
+</p>
+
+<p class="mb-2">
   <strong>Description:</strong>
   <%= @pod.description %>
 </p>
 <% if @pod.teacher_id.present? %>
-  <p>
+  <p class="mb-2">
     <strong>Teacher Name:</strong>
     <%= [@pod.teacher.first_name, @pod.teacher.last_name].join(' ').titleize %>
   </p>
-  <p>
-    <strong>Gender:</strong>
-    <%= @pod.teacher.gender %>
-  </p>
 
-  <p>
+  <p class="mb-2">
     <strong>Grade:</strong>
     <%= @pod.teacher.grade.reject(&:empty?).join(',') %>
   </p>
 <% end %>
 <!-- component -->
-<%= render 'join', pod: @pod, parent: current_parent %>
 
-<div id="new-review">
+<div id="new-review" class="mb-2">
   <%= link_to image_tag("Red_star.ico"), new_review_path(reviewable_id: @pod.id, reviewable_type: @pod.class.name),  remote: true  %> 
 </div>
-<div id='pod-reviews'>
+<div id='pod-reviews' class="mb-2">
   <%= render @pod.reviews  %>
 </div>
+<%= render 'join', pod: @pod, parent: current_parent %>
+<div class="mt-4">
 <% if @pod.parent_id == current_parent.id %>
-  <%= link_to 'Edit', edit_pod_path(@pod) %> |
+  <%= link_to 'Edit', edit_pod_path(@pod),  class:'text-sm bg-blue-500 hover:bg-blue-600 text-white p-2 px-2 mr-2 rounded focus:outline-none focus:shadow-outline'%> 
 <% end %>  
-<%= link_to 'Back', pods_path %>
+<%= link_to 'Back', pods_path,  class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-2 px-2 mr-2 rounded focus:outline-none focus:shadow-outline'%> 
+
+</div>
+</div>
+</div>
