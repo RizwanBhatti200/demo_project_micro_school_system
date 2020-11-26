@@ -23,7 +23,7 @@
           <tr class="border-b hover:bg-orange-100 bg-gray-100">
             <td class="p-3 px-5"><%= pod.zipcode %></td>
             <td class="p-3 px-5"><%= pod.pod_name %></td>
-            <td class="p-3 px-5"><%= pod.description %></td>
+            <td class="p-3 px-5"><%= truncate pod.description,length: 50 %></td>
             <td class="p-3 px-5 flex justify-end">
               <%= link_to 'Show', pod , class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-3 px-5 mr-2 rounded focus:outline-none focus:shadow-outline'%>
               <% if current_parent.present? && @parent&.id == current_parent.id %>

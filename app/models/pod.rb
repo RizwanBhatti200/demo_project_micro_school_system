@@ -24,4 +24,13 @@ class Pod < ApplicationRecord
 
     scope :active, -> { where(active: true) }
     scope :inactive, -> { where(active: false) }
+    scope :orderd, -> { order(created_at: :desc)}
+    # Ex:- scope :active, -> {where(:active => true)}
+
+
+    #stil note in use
+    def self.listing()
+      order(created_at: :desc).page(params[:page]).per(5)
+    end
+    
 end
