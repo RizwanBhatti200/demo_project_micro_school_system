@@ -1,44 +1,40 @@
 <%= form_with(model: [:parent, student],html: { multipart: true }, local: true) do |form| %>
-  <% if student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
-
-      <ul>
-      <% student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<!-- component -->
+<div class=" min-h-screen flex flex-col font-body">
+  <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 ">
+    <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+      <% if student.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+          <ul>
+          <% student.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+      <%= image_tag "logos/mlogo.png", class: "object-cover h-48 w-full" %>
+        <div class="field">
+          <%= form.text_field :first_name,  class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"First Name" %>
+        </div>
+        <div class="field">
+          <%= form.text_field :last_name, class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"Last Name" %>
+        </div>
+        <div class="field">
+          <%= form.number_field :age, min: 1, max:15, class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"Age" %>
+        </div>
+        <div>
+          <%= form.select :grade, Student::GRADE, {}, { class: "block border-2 bg-white focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" } %>
+        </div>
+        <div class="field">
+          <%= form.select :gender, Student.genders.map {|k, v| [k.titleize, k]} , {}, { class: "block border-2 bg-white focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" }%>
+        </div>
+        <%= render 'shared/edit_picture', form: form, photo: @student.image,class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" %>
+        <div class="actions float-right">
+          <%= link_to 'Back', parent_students_path, class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-3 px-3  rounded focus:outline-none focus:shadow-outline'%> 
+          <%= form.submit "Create Student",  class:'text-sm bg-blue-500 hover:bg-blue-600 text-white p-2 px-2 mr-0 rounded focus:outline-none focus:shadow-outline' %>
+        </div>
     </div>
-  <% end %>
-  
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
   </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age, min: 1, max:15 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :grade %>
-    <%= form.select :grade, Student::GRADE %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.select :gender, Student.genders.map {|k, v| [k.titleize, k]} %>
-  </div>
-
-  <%= render 'shared/edit_picture', form: form, photo: @student.image %>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>
