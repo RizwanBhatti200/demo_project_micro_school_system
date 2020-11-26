@@ -23,15 +23,15 @@
         <div class="my-5">
         <label>Students</label>
           <%=  form_with(model: JoinRequest.new, local: false, method: :post) do |f| %>
-            <%= f.select :student_id, options_from_collection_for_select(current_parent.students, :id, :first_name),{ :prompt => "Please select"},{ multiple: true  ,required: true}  %>
+            <%= f.select :student_id, options_from_collection_for_select(current_parent.students, :id, :first_name),{}, { class: "block border-2 bg-white focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" }  %>
             <%= hidden_field_tag :pod_id, pod.id %>
         </div>
         <!--Footer-->
         <div class="flex justify-end pt-2">
-          <%= f.submit 'Apply'%>
+          <button class="focus:outline-none modal-close px-4 bg-yellow-500 p-3 mr-2 rounded text-black hover:bg-yellow-600">Cancel</button>
+          <%= f.submit 'Apply',class:'text-sm bg-blue-500 hover:bg-blue-600 text-white p-3 px-4 rounded focus:outline-none focus:shadow-outline' %>
         </div>
     <% end %>
-      <button class="focus:outline-none modal-close px-4 bg-gray-400 p-3 rounded-lg text-black hover:bg-gray-300">Cancel</button>
       </div>
     </div>
   </div>
