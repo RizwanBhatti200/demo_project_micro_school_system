@@ -3,19 +3,20 @@
 <div class="bg-gray-200 min-h-screen flex flex-col font-sans">
   <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 ">
     <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <%= image_tag "logos/mlogo.png", class: "object-cover h-48 w-full" %>
+      <h2 class="text-center text-2xl uppercase text-blue-500"><% resource_name.to_s.humanize %></h2>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="field">
-        <%= f.text_field :first_name,  class: "block border border-grey-light w-full p-3 rounded mb-4" ,placeholder:"First Name" %>
+        <%= f.text_field :first_name,  class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"First Name" %>
       </div>
       <div class="field">
-        <%= f.text_field :last_name, class: "block border border-grey-light w-full p-3 rounded mb-4" ,placeholder:"Last Name" %>
+        <%= f.text_field :last_name, class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"Last Name" %>
       </div>
       <div class="field">
-        <%= f.text_field :address, class: "block border border-grey-light w-full p-3 rounded mb-4" ,placeholder:"Address" %>
+        <%= f.text_field :address, class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"Address" %>
       </div>
       <div class="field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block border border-grey-light w-full p-3 rounded mb-4" ,placeholder:"Email"%>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"Email"%>
       </div>
       <div class="field">
         <%= render  "shared/edit_picture" , form: f, photo: @parent.image %>
@@ -25,22 +26,20 @@
       <% end %>
       <div class="field">
         <i>(leave blank if you don't want to change it)</i>
-        <%= f.password_field :password, autocomplete: "new-password" , class: "block border border-grey-light w-full p-3 rounded mb-4" ,placeholder:"New-password"%>
+        <%= f.password_field :password, autocomplete: "new-password" , class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"New-password"%>
         <% if @minimum_password_length %>
           <em><%= @minimum_password_length %> characters minimum</em>
         <% end %>
       </div>
       <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "block border border-grey-light w-full p-3 rounded mb-4" ,placeholder:"Confirm-password"%>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"Confirm-password"%>
       </div>
       <div class="field">
         <i>(we need your current password to confirm your changes)</i>
-        <%= f.password_field :current_password, autocomplete: "current-password", class: "block border border-grey-light w-full p-3 rounded mb-4" ,placeholder:"Current-password"%>
-      <div class="actio w-full py-3ns">
-        <%= f.submit "Update", class:"w-full text-center py-3 rounded bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none my-1" %>
-      </div>
-      <div class="w-full text-center py-3 rounded bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none my-1">
-        <%= link_to "Back", :back %>
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" ,placeholder:"Current-password"%>
+      <div class="actio float-right">
+        <%= link_to "Back", :back, class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-3 px-3  rounded focus:outline-none focus:shadow-outline'%> 
+        <%= f.submit "Update",  class:'text-sm bg-blue-500 hover:bg-blue-600 text-white p-2 px-2 mr-0 rounded focus:outline-none focus:shadow-outline'%> 
       </div>
     </div>
   </div>
