@@ -31,8 +31,8 @@
         </div>
         <%= render 'shared/edit_picture', form: form, photo: @student.image,class: "block border-2 focus:outline-none  focus:border-blue-500 w-full p-3 rounded mb-4" %>
         <div class="actions float-right">
-          <%= link_to 'Back', parent_students_path, class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-3 px-3  rounded focus:outline-none focus:shadow-outline'%> 
-          <%= form.submit "Create Student",  class:'text-sm bg-blue-500 hover:bg-blue-600 text-white p-2 px-2 mr-0 rounded focus:outline-none focus:shadow-outline' %>
+          <%= link_to 'Back', parent_path(current_parent), class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-3 px-3  rounded focus:outline-none focus:shadow-outline'%> 
+          <%= form.submit  class:'text-sm bg-blue-500 hover:bg-blue-600 text-white p-2 px-2 mr-0 rounded focus:outline-none focus:shadow-outline' %>
         </div>
     </div>
   </div>

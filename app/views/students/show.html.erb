@@ -22,5 +22,5 @@
 <% if @student.parent_id == current_parent.id %>
   <%= link_to 'Edit', edit_parent_student_path(@student),  class:'text-sm bg-blue-500 hover:bg-blue-600 text-white p-2 px-2 mr-2 rounded focus:outline-none focus:shadow-outline'%> 
 <% end %>  
-<%= link_to 'Back', parent_students_path ,  class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-2 px-2 mr-2 rounded focus:outline-none focus:shadow-outline'%> 
+<%= link_to 'Back', parent_path(current_parent) ,  class:'text-sm bg-yellow-500 hover:bg-yellow-600 text-white p-2 px-2 mr-2 rounded focus:outline-none focus:shadow-outline'%> 
 </div>
