@@ -8,6 +8,14 @@ Rails.application.routes.draw do
 
       root to: "parents#index"
     end
+
+
+  namespace :api do
+    resources :pods , only: [:index]
+    root to: "pods#index"
+  end
+
+
   devise_for :parents
 
   resources :teachers, only: [:show, :index]
